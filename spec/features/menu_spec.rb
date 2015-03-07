@@ -9,8 +9,8 @@ describe 'the menu' do
 
 	it 'has a file button' do
 		visit('/')
-		click_link('Files')
-		expect(page).to have_content("files repo")
+		click_link('Documents')
+		expect(page).to have_content("Documents repo")
 	end
 	
 end

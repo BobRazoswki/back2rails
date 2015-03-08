@@ -1,6 +1,6 @@
 <% if @documents.all.any? %>
 	<% @documents.each do |document| %>
-		<%=  document.ref %>
+		<section class="col-md-6"><%=  document.ref %></section>
 	<% end %>
 <% else %>
 	Nothing yet buddy

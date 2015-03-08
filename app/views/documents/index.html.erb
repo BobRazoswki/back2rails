@@ -1,4 +1,18 @@
-Documents repo
-<%= render file: "documents/show" %>
-<%= link_to "Add", new_document_path %>
-<%# render file: "documents/new" %>
+<header>
+<h1>Documents repo</h1>
+	<navigation>
+		<ul>
+			<li>
+				<%= link_to "Add", new_document_path %>
+				<%= render file: "documents/new" %>
+			</li>
+		</ul>
+	</navigation>
+</header>
+
+<article>
+	<h2> Current docs </h2>
+	<%= render file: "documents/show" %>
+</article>
+
+

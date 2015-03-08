@@ -4,7 +4,8 @@ class DocumentsController < ApplicationController
 
 	def index
 		@documents = Document.all
-		#render 'show'
+		@new_document = Document.new
+		@new_document.save
 	end
 
 	def show
@@ -12,8 +13,8 @@ class DocumentsController < ApplicationController
 	end
 
 	def new
-		@new_document = Document.new
-		@new_document.save
+		#@new_document = Document.new
+		#@new_document.save
 	end
 
 	def create

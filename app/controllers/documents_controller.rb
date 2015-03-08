@@ -4,8 +4,8 @@ class DocumentsController < ApplicationController
 
 	def index
 		@documents = Document.all
-		@new_document = Document.new
-		@new_document.save
+		#@new_document = Document.new
+		#@new_document.save
 	end
 
 	def show
@@ -15,9 +15,9 @@ class DocumentsController < ApplicationController
 	end
 
 	def new
-		#@new_document = Document.new
-		#@new_document.save
-		redirect_to '/documents'
+		@new_document = Document.new
+		@new_document.save
+		#redirect_to '/documents'
 	end
 
 	def create

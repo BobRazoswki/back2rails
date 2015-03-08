@@ -7,7 +7,7 @@ describe 'Documents spec' do
 	before(:all) do
 		Document.destroy_all
 	end
-		xit 'there is no doc' do
+		it 'there is no doc' do
 			visit('/documents/')
 			expect(page).to have_content('Nothing yet buddy')
 		end

@@ -15,6 +15,7 @@ class DocumentsController < ApplicationController
 	def new
 		#@new_document = Document.new
 		#@new_document.save
+		redirect_to '/documents'
 	end
 
 	def create

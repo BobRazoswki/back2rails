@@ -14,11 +14,9 @@ class DocumentsController < ApplicationController
 	def new
 		@new_document = Document.new
 		@new_document.save
-	    #redirect_to '/documents'
 	end
 
 	def create
-		#@new_document = Document.find(params[:id])
 	    @new_document = Document.create(_document_params)
 	    @new_document.save
 	    redirect_to '/documents'

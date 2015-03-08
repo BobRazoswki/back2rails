@@ -1,7 +1,6 @@
 <% if @documents.all.any? %>
 	<% @documents.each do |document| %>
 		<%=  document.ref %>
-		<%=  document.id %>
 	<% end %>
 <% else %>
 	Nothing yet buddy

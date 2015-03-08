@@ -1,7 +1,8 @@
 class DocumentsController < ApplicationController
 
 	def index
-
+		
+		#render 'show'
 	end
 
 	def show

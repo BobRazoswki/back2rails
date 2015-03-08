@@ -11,13 +11,18 @@ describe 'Documents' do
 
 	context 'Docs' do
 
-		before do 
+		before(:each) do 
 			Document.create(ref: 'INV2015-0001')
 		end
 
 		it 'has a doc and show it' do
 			visit('/documents/index')
 			expect(page).to have_content('INV2015-0001')
+		end
+
+		it 'redirect to the page to add a doc' do
+			visit('/documents')
+			click_link('Add a ')
 		end
 
 	end

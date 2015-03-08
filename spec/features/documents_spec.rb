@@ -38,4 +38,23 @@ describe 'Documents' do
 
 	end
 
+	context 'VIEW' do
+
+		  let!(:test){Document.create(ref:'test-ind')}
+
+		it 'redirect to the individual page of the doc' do
+			visit('/documents')
+			click_link('test-ind')
+			expect(page).to have_content('test-ind')
+			expect(current_path).to eq "/documents/#{test.id}"
+		end
+	end
+
+
+
+
+
+
+
+
 end

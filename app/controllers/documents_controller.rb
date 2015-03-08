@@ -5,7 +5,8 @@ class DocumentsController < ApplicationController
 	end
 
 	def show
-
+		@documents = Document.all
+		@new_documents = Document.new
 	end
-	
+
 end

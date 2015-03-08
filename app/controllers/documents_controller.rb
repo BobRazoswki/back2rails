@@ -10,6 +10,7 @@ class DocumentsController < ApplicationController
 
 	def show
 		@documents = Document.all
+		#@doc_by_ref = Document.find(params[:id])
 	end
 
 	def new

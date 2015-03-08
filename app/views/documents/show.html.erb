@@ -1,7 +1,7 @@
-<% if @documents.all.any? %>
+<% if @documents.any? %>
 	<% @documents.each do |document| %>
 		<section class="col-md-6">
-<%= link_to document.ref, document_path(document) %>
+			<%= link_to document.ref, document_path(document) %>
 		</section>
 	<% end %>
 <% else %>

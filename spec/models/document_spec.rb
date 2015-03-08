@@ -11,7 +11,7 @@ RSpec.describe Document, type: :model do
 	it 'register well the name in the db' do
 		doc = Document.new
 		doc.save
-		expect(doc).to eq ('INV2015-0001')
+		expect(doc.ref).to eq ('INV2015-0001')
 	end
   
 end

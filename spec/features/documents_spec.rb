@@ -31,7 +31,7 @@ describe 'Documents' do
 			visit('/documents')
 			click_link('Add')
 			fill_in('Ref',:with => 'INV2015-0001')
-			click_button('Update Document')
+			click_button('Upload Doc')
 			expect(page).to have_content('INV2015-0001')
 			expect(current_path).to eq '/documents'
 		end

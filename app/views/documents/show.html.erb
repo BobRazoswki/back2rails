@@ -1,9 +1,8 @@
-<%= link_to 'Add a doc', documents_path %>
-	<% if @documents.all.any? %>
-		<% @documents.each |document| %>
-			<%=  document.ref %>
-			d
-	<% else %>
-		Nothing yet buddy
+<% if @documents.all.any? %>
+	<% @documents.each do |document| %>
+		<%=  document.ref %>
+		<%=  document.id %>
 	<% end %>
-	
+<% else %>
+	Nothing yet buddy
+<% end %>

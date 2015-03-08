@@ -1,9 +1,3 @@
-<% if @documents.any? %>
-	<% @documents.each do |document| %>
-		<section class="col-md-6">
-			<%= link_to document.ref, document_path(document) %>
-		</section>
-	<% end %>
-<% else %>
-	Nothing yet buddy
-<% end %>
+<%= @document.ref %>
+<%= @document.id %>
+<%= @document.created_at %>

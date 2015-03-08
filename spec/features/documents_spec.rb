@@ -1,24 +1,26 @@
 require 'rails_helper'
 
-describe 'Documents' do
+describe 'Documents spec' do
 
-	context 'No docs' do
+	context '' do
 
-		it 'there is no doc' do
-			visit('/documents/index')
+	before(:all) do
+		Document.destroy_all
+	end
+		xit 'there is no doc' do
+			visit('/documents/')
 			expect(page).to have_content('Nothing yet buddy')
 		end
-
 	end
 
-	context 'Docs' do
+	context 'content' do
 
 		before(:each) do 
 			Document.create(ref: 'INV2015-0001')
 		end
 
 		it 'has a doc and show it' do
-			visit('/documents/index')
+			visit('/documents/')
 			expect(page).to have_content('INV2015-0001')
 			expect(page).not_to have_content('Nothing yet buddy')
 		end
@@ -48,6 +50,7 @@ describe 'Documents' do
 			expect(page).to have_content('test-ind')
 			expect(current_path).to eq "/documents/#{test.id}"
 		end
+
 	end
 
 

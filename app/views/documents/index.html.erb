@@ -12,7 +12,19 @@
 
 <article>
 	<h2> Current docs </h2>
-	<%= render file: "documents/show" %>
+
+	<% if @documents.any? %>
+		<% @documents.each do |document| %>
+			<section class="col-md-6">
+				<%# document.ref %>
+				<%= link_to document.ref, document_path(document) %>
+			</section>
+		<% end %>
+	<% else %>
+		Nothing yet buddy
+	<% end %>
+
+	<%# render file: "documents/show" %>
 </article>
 
 

@@ -49,7 +49,7 @@ describe 'Documents spec' do
 			visit('/documents')
 			expect(page).to have_content('bob')
 			expect(page).to have_content('yes')
-			click_link('Edit bob')
+			find(".edit_bob").click_link 'Edit'
 			fill_in('Ref', with: 'bobby')
 			fill_in('Status', with: 'no')
 			click_button 'Update Document'
@@ -68,7 +68,7 @@ describe 'Documents spec' do
 		it 'let the user delete a doc' do
 			visit('/documents')
 			expect(page).to have_content('al')
-			find("#document_al").click_link 'Delete'
+			find(".delete_al").click_link 'Delete'
 			expect(page).not_to have_content('Ref: al')
 		end
 

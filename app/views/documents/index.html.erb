@@ -17,8 +17,10 @@
 		<% @documents.each do |document| %>
 			<section class="col-md-6">
 				<%= document.status %>
+				Ref: <%= document.ref %>
 				<%= link_to document.ref, document_path(document) %>
 				<%= link_to "Edit #{document.ref}", edit_document_path(document) %>
+				<span id="document_<%= document.ref %>"><%= link_to "Delete #{document.ref}", document_path(document), method: :delete%></span>
 			</section>
 		<% end %>
 	<% else %>

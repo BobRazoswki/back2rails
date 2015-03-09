@@ -4,9 +4,6 @@ describe 'Documents spec' do
 
 	context '' do
 
-	before(:all) do
-		Document.destroy_all
-	end
 		it 'there is no doc' do
 			visit('/documents/')
 			expect(page).to have_content('Nothing yet buddy')
@@ -65,6 +62,22 @@ describe 'Documents spec' do
 			expect(page).to have_content('bobby')
 			expect(current_path).to eq '/documents'
 		end
+	end
+
+	context 'DELETE' do
+
+		before do
+			@document = Document.create ref: 'al' 
+		end
+
+		it 'let the user delete a doc' do
+			visit('/documents')
+			expect(page).to have_content('al')
+			#save_and_open_page
+			find("#document_al").click_link 'Delete'
+			expect(page).not_to have_content('Ref: al')
+		end
+
 	end
 
 

@@ -12,8 +12,6 @@ class DocumentsController < ApplicationController
 
 	def new
 		@new_document = Document.new
-		#@new_document.save
-		#redirect_to '/documents'
 	end
 
 	def create
@@ -25,11 +23,8 @@ class DocumentsController < ApplicationController
 
 	def update
 	    document = Document.find(params[:id])
-	    if document.update(_document_params) 
-	    	redirect_to '/documents' 
-	    else
-	    	 render 'edit'
-	    end
+	    document.update(_document_params) 
+	    redirect_to "/documents" 
   	end
 
 

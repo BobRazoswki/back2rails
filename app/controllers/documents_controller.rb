@@ -17,20 +17,31 @@ class DocumentsController < ApplicationController
 	def new
 		@new_document = Document.new
 		@new_document.save
-		#redirect_to '/documents'
+		redirect_to '/documents'
 	end
 
 	def create
 	    @new_document = Document.create(_document_params)
 	    @new_document.save
+
 	    redirect_to '/documents'
   	end
 
   	def update
-  		@up_doc = Document.find(params[:id])
-		@up_doc.update(_document_params)
+  		@document = Document.find(params[:id])
+		@document.update(_document_params)
   		redirect_to '/documents'
   	end
+
+  	def edit
+  		#@document = Document.find(params[:id])
+  		
+  		@document.update(_document_params)
+raise params.inspect
+  		#@edit_doc.save
+  		redirect_to '/documents'
+  	end
+
 
 
 

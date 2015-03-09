@@ -53,6 +53,20 @@ describe 'Documents spec' do
 
 	end
 
+	context 'EDIT' do
+
+		before {Document.create ref: 'bob'}
+
+		it 'let the user edit a doc' do
+			visit('/documents')
+			click_link('Edit bob')
+			fill_in('Ref', with: 'bobby')
+			click_button 'Update Document'
+			expect(page).to have_content('bobby')
+			expect(current_path).to eq '/documents'
+		end
+	end
+
 
 
 

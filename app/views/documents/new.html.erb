@@ -1,7 +1,7 @@
-<%= form_for @new_document do |f| %>
+<%= form_for @document do |f| %>
 	<%= f.label :ref %>
 	<%= f.text_field :ref %>
-			<%= f.label :status %>
+	<%= f.label :status %>
 	<%= f.text_field :status %>
 	<%= f.submit 'Upload Doc' %>
 <% end %>

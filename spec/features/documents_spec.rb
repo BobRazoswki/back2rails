@@ -67,8 +67,9 @@ describe 'Documents spec' do
 
 		it 'let the user delete a doc' do
 			visit('/documents')
-			expect(page).to have_content('al')
+			expect(page).to have_content('Ref: al')
 			find(".delete_al").click_link 'Delete'
+			#save_and_open_page
 			expect(page).not_to have_content('Ref: al')
 		end
 

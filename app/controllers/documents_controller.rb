@@ -11,19 +11,19 @@ class DocumentsController < ApplicationController
 	end
 
 	def new
-		@new_document = Document.new
+		@document = Document.new
 	end
 
 	def create
-	    @new_document = Document.create(_document_params)
-	    @new_document.save
+	    @document = Document.create(_document_params)
+	    @document.save
 	    redirect_to '/documents'
   	end
 
 
 	def update
-	    document = Document.find(params[:id])
-	    document.update(_document_params) 
+	    @document = Document.find(params[:id])
+	    @document.update(_document_params) 
 	    redirect_to "/documents" 
   	end
 
@@ -33,8 +33,9 @@ class DocumentsController < ApplicationController
 	end
 
 	def destroy
-		@delete_doc = Document.find(params[:id])
-		@delete_doc.destroy
+		@document = Document.find(params[:id])
+		@document.destroy
+		flash[:notice] = 'Restaurant deleted successfully'
 		redirect_to '/documents'
 	end
 

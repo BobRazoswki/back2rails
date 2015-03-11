@@ -26,6 +26,7 @@
 				  </div>
 				  <div class="panel-body">
 				    <%= document.status %>
+				    <%= image_tag document.pic.url(:medium), class: "img_#{document.ref}" %>
 				  </div>
 				  <div class="panel-footer">
 				  	<span class="edit_<%= document.ref %>">

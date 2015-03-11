@@ -70,7 +70,9 @@ describe 'Documents spec' do
 			expect(page).to have_content('Ref: al')
 			find(".delete_al").click_link 'Delete'
 			#save_and_open_page
+			expect(page).not_to have_css 'span', text: 'Ref: al'
 			expect(page).not_to have_content('Ref: al')
+			expect(page).to have_content 'Restaurant deleted successfully'
 		end
 
 	end

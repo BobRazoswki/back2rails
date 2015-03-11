@@ -1,7 +1,9 @@
-<%= form_for @edit_doc do |f| %>
+<%= form_for @edit_doc, html: {multipart: true} do |f| %>
 	<%= f.label :ref %>
 	<%= f.text_field :ref %>
 	<%= f.label :status %>
 	<%= f.text_field :status %>
+	<%= f.label :pic %>
+	<%= f.file_field :pic %>
 	<%= f.submit %>
 <% end %>

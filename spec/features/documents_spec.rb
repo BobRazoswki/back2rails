@@ -1,9 +1,13 @@
 require 'rails_helper'
 
-describe 'Documents spec' do
+describe 'DOCUMENTS' do
 
-	context 'ADD' do
+	it 'there is no doc' do
+		visit('/documents/')
+		expect(page).to have_content('Nothing yet buddy')
+	end
 
+	context 'Add' do
 		it 'prompts the user to add an event' do
 			visit('/documents')
 			click_link('Add')
@@ -14,30 +18,19 @@ describe 'Documents spec' do
 			expect(page).to have_content('ok')
 			expect(current_path).to eq '/documents'
 		end
-
 	end
 
-		it 'there is no doc' do
-			visit('/documents/')
-			expect(page).to have_content('Nothing yet buddy')
-		end
-
-	context 'VIEW' do
-
+	context 'View' do
 		let!(:test){Document.create(ref:'INV2015-0001')}
-
 		it 'has a doc and show it' do
 			visit('/documents/')
 			expect(page).to have_content('INV2015-0001')
 			expect(page).not_to have_content('Nothing yet buddy')
 		end
-
 	end
 
-	context 'EDIT' do
-
+	context 'Edit' do
 		before {Document.create ref: 'bob', status: 'yes'}
-
 		it 'let the user edit a doc' do
 			visit('/documents')
 			expect(page).to have_content('bob')
@@ -52,29 +45,16 @@ describe 'Documents spec' do
 		end
 	end
 
-	context 'DELETE' do
-
-		before do
-			@document = Document.create ref: 'al'
-		end
-
+	context 'Delete' do
+		before {@document = Document.create ref: 'al'}
 		it 'let the user delete a doc' do
 			visit('/documents')
 			expect(page).to have_content('Ref: al')
 			find(".delete_al").click_link 'Delete'
-			#save_and_open_page
 			expect(page).not_to have_css 'span', text: 'Ref: al'
 			expect(page).not_to have_content('Ref: al')
-			expect(page).to have_content 'Restaurant deleted successfully'
+			expect(page).to have_content 'Document deleted successfully'
 		end
-
 	end
-
-
-
-
-
-
-
 
 end

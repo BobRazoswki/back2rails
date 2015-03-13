@@ -1,14 +1,11 @@
 <header>
-<h1>Documents repo</h1>
-	
-		<ul>
-			<li>
-				<%= link_to "Add", new_document_path %>
-			</li>
-		</ul>
-
+  <h1>Documents repo</h1>
+	<ul>
+		<li>
+			<%= link_to "Add", new_document_path %>
+		</li>
+	</ul>
 </header>
-
 <article>
 	<h2> Current docs </h2>
 	<% if @documents.any? %>

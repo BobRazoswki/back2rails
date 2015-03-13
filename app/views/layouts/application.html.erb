@@ -11,18 +11,12 @@
 
 <div class="container-app">
     <%= render "layouts/menu" %>
-   	<div class="main-content">
-      <div class="swipe-area"></div>
-        <a href="#" data-toggle=".container-app" id="sidebar-toggle">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
-          <%= notice %>
+   	  <div class="main-content">
+        <%= render "layouts/sidebar_button" %>
+        <%= notice %>
         <div class="content">
           <%= yield %>  
-        </div>       
-      </div>
+        </div>
     </div>
 </div>
 </body>

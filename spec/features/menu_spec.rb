@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'the menu' do
+describe 'MENU' do
 
 	it 'go the the homepage' do
 		visit('/')
@@ -20,4 +20,5 @@ describe 'the menu' do
 		click_link('Home')
 		expect(page).to have_content("Home")
 	end
+	
 end

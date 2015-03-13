@@ -1,20 +1,14 @@
 <header>
 <h1>Documents repo</h1>
-	<navigation>
+	
 		<ul>
 			<li>
 				<%= link_to "Add", new_document_path %>
 			</li>
 		</ul>
-	</navigation>
+
 </header>
-<nav class="menu">
-	<span class="">Search Bar</span>
-	<span class="">Documents</span>
-	<span class="">Invoices</span>
-	<span class="">Quotes</span>
-	<span class="">Customers</span>
-</nav>
+
 <article>
 	<h2> Current docs </h2>
 	<% if @documents.any? %>

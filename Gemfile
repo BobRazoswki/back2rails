@@ -21,4 +21,5 @@ group :development, :test do
 	gem 'warden'
 	gem 'byebug'
 	gem 'rspec-collection_matchers'
+	gem 'selenium-webdriver'
 end

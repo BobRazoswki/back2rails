@@ -26,13 +26,6 @@ describe 'Documents spec' do
 
 		let!(:test){Document.create(ref:'INV2015-0001')}
 
-		xit 'redirect to the individual page of the doc' do
-			visit('/documents')
-			click_link('INV2015-0001')
-			expect(page).to have_content('INV2015-0001')
-			expect(current_path).to eq "/documents/#{test.id}"
-		end
-
 		it 'has a doc and show it' do
 			visit('/documents/')
 			expect(page).to have_content('INV2015-0001')

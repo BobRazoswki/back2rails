@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= jquery.touchSwipe.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+

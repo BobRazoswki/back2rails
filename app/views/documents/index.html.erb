@@ -1,36 +1,36 @@
-<header>
-  <h1>Documents repo</h1>
-	<ul>
-		<li>
-			<%= link_to "Add", new_document_path %>
-		</li>
-	</ul>
-</header>
-<article>
-	<h2> Current docs </h2>
+<header>Documents repo</header>
+
+<section class="container-side">
+	
+	<article class="add-box">
+		<%= link_to "Add", new_document_path %>
+	</article>
+
 	<% if @documents.any? %>
 		<% @documents.each do |document| %>
-			<section class="col-md-3">
-				<div class="panel panel-default">
-				  <div class="panel-heading">
-				    <h3 class="panel-title">Ref: <%= document.ref %></h3>
-				  </div>
-				  <div class="panel-body">
-				    <%= document.status %>
-				    <%= image_tag document.pic.url(:medium), class: "img_#{document.ref}" %>
-				  </div>
-				  <div class="panel-footer">
-				  	<span class="edit_<%= document.ref %>">
-				  		<%= link_to "Edit", edit_document_path(document) %>
-				  	</span>
-					<span class="delete_<%= document.ref %>">
-						<%= link_to "Delete", document_path(document), method: :delete %>
-					</span>
-				  </div>
-				</div>
-			</section>
+			<article class="document-box">
+				<%= link_to edit_document_path(document), id: "edit_#{document.ref}" do %>
+				<span class="img_<%= document.ref %> img_box">
+					<%= image_tag document.pic.url(:thumb) %> 
+				</span>
+				<h4 class="title_<%= document.ref %>">
+					<%= document.ref %>
+				</h4>
+				<span class="status_<%= document.ref %>">
+					<%= document.status %>
+				</span>
+				<span class="delete_<%= document.ref %>">
+					<%= link_to "Delete", document_path(document), method: :delete %>
+				</span>
+				<% end %>
+			</article>
 		<% end %>
 		<% else %>
-			Nothing yet buddy
-	<% end %>	
-</article>
+		Nothing yet buddy
+	<% end %>
+
+
+</section>
+
+
+

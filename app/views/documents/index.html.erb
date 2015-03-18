@@ -8,20 +8,36 @@
 
 	<% if @documents.any? %>
 		<% @documents.each do |document| %>
+<script type="text/x-handlebars" id="documents">
+	
+
+
+
+	{{outlet}}
+</script>
+
+
+
+
+
+
+
 			<article class="document-box">
 				<%= link_to edit_document_path(document), id: "edit_#{document.ref}" do %>
 				<span class="img_<%= document.ref %> img_box">
 					<%= image_tag document.pic.url(:thumb) %> 
 				</span>
-				<h4 class="title_<%= document.ref %>">
-					<%= document.ref %>
-				</h4>
-				<span class="status_<%= document.ref %>">
-					<%= document.status %>
-				</span>
-				<span class="delete_<%= document.ref %>">
-					<%= link_to "Delete", document_path(document), method: :delete %>
-				</span>
+				<section class="section-box">
+					<h4 class="title_<%= document.ref %>">
+						<%= document.ref %>
+					</h4>
+					<span class="status_<%= document.ref %>">
+						<%= document.status %>
+					</span>
+					<span class="delete_<%= document.ref %>">
+						<%= link_to "Delete", document_path(document), method: :delete %>
+					</span>
+				</section>
 				<% end %>
 			</article>
 		<% end %>

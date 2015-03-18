@@ -6,3 +6,9 @@
         jQuery(toggle_el).toggleClass("open-sidebar");
       });
     });
+
+App = Ember.Application.create();
+
+App.Router.map(function(){
+	this.resource('documents');
+})

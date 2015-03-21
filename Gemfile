@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "paperclip", "~> 4.2"
-gem "ember-rails"
+gem "ember-cli-rails"
 
 group :development, :test do
 	gem 'capybara'

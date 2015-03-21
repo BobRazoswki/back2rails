@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require ember-rails
 //= require bootstrap-sprockets
 //= jquery.touchSwipe.min
 //= require jquery_ujs

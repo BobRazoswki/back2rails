@@ -25,7 +25,7 @@ class DocumentsController < ApplicationController
     @up_doc = Document.find(params[:id])
     @up_doc.update(_document_params) 
     redirect_to "/documents" 
-  end
+ 	end
 
   def edit
     @edit_doc  = Document.find(params[:id])

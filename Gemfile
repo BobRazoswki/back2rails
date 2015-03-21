@@ -22,4 +22,5 @@ group :development, :test do
 	gem 'byebug'
 	gem 'rspec-collection_matchers'
 	gem 'selenium-webdriver'
+	gem "codeclimate-test-reporter"
 end

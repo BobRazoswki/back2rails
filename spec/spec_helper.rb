@@ -1,4 +1,6 @@
-
+ENV['CODECLIMATE_REPO_TOKEN']='3c138f4b90367889524f1c171d9c0d9e0e895dc36bb318bd3137c6e816af7aaa'
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
 RSpec.configure do |config|
 
 

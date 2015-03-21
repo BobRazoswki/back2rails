@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require mustache
 //= require bootstrap-sprockets
 //= jquery.touchSwipe.min
 //= require jquery_ujs

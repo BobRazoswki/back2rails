@@ -35,7 +35,6 @@ describe 'DOCUMENTS' do
 			visit('/documents')
 			expect(page).to have_content('bob')
 			expect(page).to have_content('yes')
-			save_and_open_page
 			click_link "edit_bob"
 			fill_in('Ref', with: 'bobby')
 			fill_in('Status', with: 'no')
@@ -51,7 +50,7 @@ describe 'DOCUMENTS' do
 		it 'let the user delete a doc' do
 			visit('/documents')
 			expect(page).to have_content('al')
-			find(".delete_al").click_link 'Delete'
+			click_link 'delete_al'
 			expect(page).not_to have_css 'span', text: 'Ref: al'
 			expect(page).not_to have_content('al')
 			expect(page).to have_content 'Document deleted successfully'

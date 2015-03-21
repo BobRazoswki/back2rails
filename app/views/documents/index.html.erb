@@ -1,52 +1,39 @@
 <header>Documents repo</header>
 
-<section class="container-side">
-	
-	<article class="add-box">
-		<%= link_to "Add", new_document_path %>
-	</article>
+<section class="container-fluid">
+	<div class="row">
 
-	<% if @documents.any? %>
-		<% @documents.each do |document| %>
-<script type="text/x-handlebars" id="documents">
-	
+  	<article class="add-box">
+  		<%= link_to "Add", new_document_path, class:"add-link" %>
+  	</article>
 
+    <ul class="list-group col-md-2">
+    	<% if @documents.any? %>
+    		<% @documents.each do |document| %>
+    		  <li class="list-group-item">
+    		    <%= document.ref %>
+    			    <span class="pull-right">
+    			    <%= link_to "", document_path(document), method: :delete, id: "delete_#{document.ref}", class: "fa fa-trash-o" %>
+    			    <%= link_to "", edit_document_path(document), id: "edit_#{document.ref}", class: "fa fa-pencil-square-o" %>
+    			    </span>
+    		  </li>
+    		  	<% end %>
+    		<% else %>
+    		Nothing yet buddy
+    	<% end %>
+    </ul>
 
+    <section class="">
+    	<article class="col-md-10">
+      everything
+          <% if @documents.any? %>
+        <% @documents.each do |document| %>
+        <%= document.status %>
+         <%= image_tag document.pic.url(:thumb), class: "img_#{document.ref}" %>
+          <% end %>
+            <% end %>
+    	</article>
+    </section>
 
-	{{outlet}}
-</script>
-
-
-
-
-
-
-
-			<article class="document-box">
-				<%= link_to edit_document_path(document), id: "edit_#{document.ref}" do %>
-				<span class="img_<%= document.ref %> img_box">
-					<%= image_tag document.pic.url(:thumb) %> 
-				</span>
-				<section class="section-box">
-					<h4 class="title_<%= document.ref %>">
-						<%= document.ref %>
-					</h4>
-					<span class="status_<%= document.ref %>">
-						<%= document.status %>
-					</span>
-					<span class="delete_<%= document.ref %>">
-						<%= link_to "Delete", document_path(document), method: :delete %>
-					</span>
-				</section>
-				<% end %>
-			</article>
-		<% end %>
-		<% else %>
-		Nothing yet buddy
-	<% end %>
-
-
+	</div>
 </section>
-
-
-

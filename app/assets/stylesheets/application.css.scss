@@ -2,12 +2,12 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 
-*= fontawesome.min
 *= require_self
 */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 $app-color: rgba(123, 208, 81, 1);
 
@@ -130,6 +130,7 @@ section.container-side {
     height: 100vh;
     left: -69px;
     top: 22px;
+    float: left;
 }
 article.add-box {
   display: block;
@@ -159,4 +160,17 @@ article.document-box:nth-child(odd) {
     width: 229px;
 }
 
-/*= Side menu documents */
+/*/ Side menu documents */
+
+
+/* main container doc */
+    section.main-container {
+    display: inline-block;
+    height: 93vh;
+    position: relative;
+    border: 1px solid black;
+    float: right;
+    width: calc(100% - 300px);
+}
+/*/ main container doc */
+

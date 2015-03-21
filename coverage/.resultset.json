@@ -195,10 +195,6 @@
         null,
         null
       ],
-      "/Users/Bob/Desktop/lab/back2rails/app/helpers/files_helper.rb": [
-        1,
-        null
-      ],
       "/Users/Bob/Desktop/lab/back2rails/app/helpers/pages_helper.rb": [
         1,
         null
@@ -253,41 +249,8 @@
         1,
         null
       ],
-      "/Users/Bob/Desktop/lab/back2rails/app/controllers/files_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
       "/Users/Bob/Desktop/lab/back2rails/app/controllers/pages_controller.rb": [
         1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
         null,
         1,
         null,
@@ -303,6 +266,6 @@
         null
       ]
     },
-    "timestamp": 1426955188
+    "timestamp": 1426955404
   }
 }

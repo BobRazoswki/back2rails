@@ -7,7 +7,7 @@ describe '' do
 		expect(page).to have_css('.open-sidebar')
 	end
 
-	it 'open toggle bar twice', js: :true do
+	xit 'open toggle bar twice', js: :true do
 		visit('/')
 		click_link('sidebar-toggle')
 		expect(page).to have_css('.open-sidebar')

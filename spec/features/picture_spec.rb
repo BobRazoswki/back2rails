@@ -6,7 +6,7 @@ describe 'Pictures' do
 		click_link 'Add'
 		fill_in('Ref', :with => "bob")
 		attach_file 'Pic', Rails.root.join('spec/images/Bob_razowski-1.jpg')
-		click_button 'Upload Doc'
+		click_button 'submit'
 		expect(page).to have_css('.img_bob')
 	end
 end

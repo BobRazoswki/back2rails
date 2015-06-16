@@ -1,1 +1,1 @@
-json.partial! partial: 'documents/document'
+json.partial! partial: 'documents/documents'

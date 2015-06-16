@@ -7,16 +7,27 @@ describe 'DOCUMENTS' do
 		expect(page).to have_content('Nothing yet buddy')
 	end
 
-	context 'Add' do
+	xcontext 'Add' do
 		it 'prompts the user to add an event' do
 			visit('/documents')
 			click_link('Add')
 			fill_in('Ref',:with => 'INV2015-0001')
 			fill_in('Status',:with => 'ok')
-			click_button('Upload Doc')
+			click_button('submit')
 			expect(page).to have_content('INV2015-0001')
 			expect(page).to have_content('ok')
 			expect(current_path).to eq '/documents'
+		end
+	end
+
+	context 'ADD with ajax' do
+		it 'show directly the new entry' do
+			visit('/documents')
+			click_link 'Add'
+			fill_in('Ref',:with => 'Aa')
+			click_button('submit')
+			expect(current_path).to eq '/documents'
+			expect(page).to have_content('Aa')
 		end
 	end
 

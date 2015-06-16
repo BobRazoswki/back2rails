@@ -4,6 +4,7 @@ class DocumentsController < ApplicationController
 
 	def index
 		@documents = Document.all
+		@document = Document.new
 	end
 
 	def show
@@ -13,13 +14,14 @@ class DocumentsController < ApplicationController
 
 	def new
 		@new_doc = Document.new
+		redirect_to '/documents'
 	end
 
 	def create
     @new_doc = Document.create(_document_params)
     @new_doc.save
-    redirect_to '/documents'
-  end
+	redirect_to '/documents'
+	end
 
 	def update
     @up_doc = Document.find(params[:id])

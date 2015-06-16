@@ -1,0 +1,17 @@
+<%= form_for @document, html: {multipart: true},class: "new_doc" do |f| %>
+  <%= f.label :ref %>
+  <%= f.text_field :ref %>
+  <%= f.label :status %>
+  <%= f.text_field :status %>
+  <%= f.label :pic %>
+  <%= f.file_field :pic %>
+  <%= f.submit 'submit' %>
+<% end %>
+<!--<form id="form_for_user" class="new_doc" method="POST" action="">
+	<section class="input-doc">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	  <input type="text" id="ref" name="ref" required>
+    <input type="text" id="status" name="status" required>
+	</section>
+	<input type="submit" class="submit-button" value="Submit">
+</form>-->

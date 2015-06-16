@@ -5,11 +5,13 @@
 
   	<article class="add-box">
   		<%= link_to "Add", new_document_path, class:"add-link" %>
+      <%= render "documents/add" %>
   	</article>
 
     <ul class="list-group col-md-2">
     	<% if @documents.any? %>
     		<% @documents.each do |document| %>
+        <article class="container-reviews-mustache"><%= render "layouts/documents" %></article>
     		  <li class="list-group-item">
     		    <%= document.ref %>
     			    <span class="pull-right">

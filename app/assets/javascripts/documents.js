@@ -15,6 +15,16 @@ jQuery(".add-link").click(function() {
 	jQuery(".add-container").toggleClass('add-container-active')
 });
 
+/*jQuery('.new_doc').on('submit', function(event) {
+		event.preventDefault();
+		var docList = jQuery(this).parent().siblings('.list-group')
+		jQuery.post(this.action, function(response) {
+			var template = jQuery('#documents-template').html();
+			var output = Mustache.render(template, response);
+			docList.prepend(output);
+		})
+		});
+	});*/
 
 
 });
